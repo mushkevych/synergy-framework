@@ -1,0 +1,15 @@
+Synergy-Framework is Hadoop Map/Reduce framework, integrated with Surus ORM and Synergy-Scheduler
+Framework features:
+
+* Process context specifying mapper, reducer, input, output by process name
+* Input/Output support both files and HBase tables
+* Surus ORM support for work with HBase tables
+* REST interface workpiece
+* Socket-level tunnels for high-throughout-put of the data into the HBase from third-party clients (i.e. Python, remote Java, etc)
+* XML-driven HBase table schema creation and deletion
+
+Synergy-Scheduler project:
+https://github.com/mushkevych/scheduler
+
+HBase Surus ORM:
+https://github.com/mushkevych/surus

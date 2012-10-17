@@ -3,7 +3,7 @@ package com.reinvent.synergy.tunnel;
 import com.reinvent.surus.mapping.EntityService;
 import com.reinvent.surus.mapping.JsonService;
 import com.reinvent.surus.system.PoolManager;
-import org.apache.hadoop.hbase.client.HTable;
+import org.apache.hadoop.hbase.client.HTableInterface;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.log4j.Logger;
 
@@ -44,7 +44,7 @@ public class TunnelWorker<T> implements Runnable {
 
     public void run() {
         boolean isOK = true;
-        HTable table = null;
+        HTableInterface table = null;
         EntityService<T> entityService = null;
         JsonService<T> jsonService = null;
         String jsonObj = null;

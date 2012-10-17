@@ -3,7 +3,7 @@ package com.reinvent.synergy.rest;
 import com.reinvent.surus.model.Constants;
 import com.reinvent.surus.system.PoolManager;
 import com.reinvent.surus.system.TableContext;
-import org.apache.hadoop.hbase.client.HTable;
+import org.apache.hadoop.hbase.client.HTableInterface;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.log4j.Logger;
@@ -54,7 +54,7 @@ public class ExamplePostHandler implements RequestHandler {
             return;
         }
 
-        HTable tExample = null;
+        HTableInterface tExample = null;
 
         try {
             tExample = pmExample.getTable();

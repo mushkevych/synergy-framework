@@ -1,9 +1,9 @@
 package com.reinvent.synergy.worker;
 
 import com.reinvent.surus.primarykey.AbstractPrimaryKey;
+import com.reinvent.surus.system.TimeQualifier;
 import com.reinvent.synergy.system.JobRunner;
 import com.reinvent.synergy.system.ProcessContext;
-import com.reinvent.surus.system.TimeQualifier;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
 import org.apache.hadoop.hbase.mapreduce.TableMapper;
@@ -27,7 +27,7 @@ public class AbstractMapper extends TableMapper<ImmutableBytesWritable, Result> 
     }
 
     public AbstractPrimaryKey getPrimaryKey() {
-        return ProcessContext.get(processName).getPrimaryKey();
+        return ProcessContext.get(processName).getPkSource();
     }
 
     public TimeQualifier getTimeQualifier() {

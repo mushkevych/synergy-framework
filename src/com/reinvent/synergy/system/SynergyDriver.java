@@ -7,7 +7,7 @@ import org.apache.hadoop.util.ToolRunner;
 
 /**
  * @author Bohdan Mushkevych
- * Description:
+ * Description: responsible for initializing and starting the Hadoop Map/Reduce job
  */
 public class SynergyDriver extends Configured implements Tool {
     private static final String PROPERTY_PROCESS_NAME = "process.name";

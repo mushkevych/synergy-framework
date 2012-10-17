@@ -16,7 +16,8 @@ public class SynergyProcess {
     private String tableTarget;
     private ColumnSubset subsetSource;
     private TimeQualifier qualifier;
-    private AbstractPrimaryKey primaryKey;
+    private AbstractPrimaryKey pkSource;
+    private AbstractPrimaryKey pkTarget;
     private Class<? extends TableMapper> mapper;
     private Class combiner;
     private Class<? extends TableReducer> reducer;
@@ -26,7 +27,8 @@ public class SynergyProcess {
                           String tableTarget,
                           ColumnSubset subsetSource,
                           TimeQualifier qualifier,
-                          AbstractPrimaryKey primaryKey,
+                          AbstractPrimaryKey pkSource,
+                          AbstractPrimaryKey pkTarget,
                           Class<? extends TableMapper> mapper,
                           Class combiner,
                           Class<? extends TableReducer> reducer) {
@@ -35,7 +37,8 @@ public class SynergyProcess {
         this.tableTarget = tableTarget;
         this.subsetSource = subsetSource;
         this.qualifier = qualifier;
-        this.primaryKey = primaryKey;
+        this.pkSource = pkSource;
+        this.pkTarget = pkTarget;
         this.mapper = mapper;
         this.combiner = combiner;
         this.reducer = reducer;
@@ -61,8 +64,12 @@ public class SynergyProcess {
         return qualifier;
     }
 
-    public AbstractPrimaryKey getPrimaryKey() {
-        return primaryKey;
+    public AbstractPrimaryKey getPkSource() {
+        return pkSource;
+    }
+
+    public AbstractPrimaryKey getPkTarget() {
+        return pkTarget;
     }
 
     public Class<? extends TableMapper> getMapperClass() {
